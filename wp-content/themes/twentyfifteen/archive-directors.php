@@ -9,7 +9,7 @@ get_header(); ?>
                 <div class="row">
                     <div class="col-xs-2"></div>
                     <div class="col-xs-8">
-                        <a href="#" class="back-arrow">
+                        <a href="/#directors" class="back-arrow">
                             <span class="aw-long-arrow-left"></span>
                         </a>
                         <h2 class="single-head-heder">Режисери</h2>

@@ -7,7 +7,7 @@ get_header(); ?>
                 <div class="row">
                     <div class="col-xs-2"></div>
                     <div class="col-xs-8">
-                        <a href="#" class="back-arrow">
+                        <a href="/directors" class="back-arrow">
                             <span class="aw-long-arrow-left"></span>
                         </a>
                         <h2 class="single-head-heder">Яна Антонец</h2>
@@ -32,13 +32,21 @@ get_header(); ?>
                     $post_itself = get_post();
                     $content = $post_itself -> post_content;
                     $content_formatted = apply_filters('the_content', $content);
-                    $thumbnail = get_the_post_thumbnail($post_id, array(170,170));
+                    $dir_face = get_field('director_image', $post_id);
+                    $dir_gif = get_field('director_gif', $post_id);
                     ?>
                     <div class="col-xs-2"></div>
                     <div class="col-xs-2">
-                        <div class="single-dir-photo">
-                            <? echo $thumbnail?>
+                        <div class="single-dir-photo" style="background-image: url('<? echo $dir_face?>');
+                            width: 100%;
+                            height: 226px;
+                            background-size: cover;">
                         </div>
+                        <style>
+                            .single-dir-photo:hover{
+                            background-image: url("<? echo $dir_gif ?>")!important;
+                            }
+                        </style>
                     </div>
                     <div class="col-xs-6">
                         <div class="single-dir-text">
@@ -73,12 +81,16 @@ get_header(); ?>
                                                 </p>
                                             </div>
                                         </div>
-                                    </a>
                                         <div class="col-xs-4">
-                                            <div class="dir-film-gif">
-                                                <img class="animated-gif" data-src="<? echo $gif ?>" src="<? echo $preview ?>" alt="">
+                                            <div class="dir-film-gif" style="background-image: url('<? echo $preview ?>')">
                                             </div>
+                                            <style>
+                                                .dir-film-gif:hover{
+                                                    background-image: url("<? echo $gif ?>")!important;
+                                                }
+                                            </style>
                                         </div>
+                                    </a>
 
 
                                 </div>

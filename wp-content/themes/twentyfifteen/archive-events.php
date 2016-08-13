@@ -9,7 +9,7 @@ get_header(); ?>
             <div class="row">
                 <div class="col-xs-2"></div>
                 <div class="col-xs-8">
-                    <a href="#" class="back-arrow">
+                    <a href="/#events" class="back-arrow">
                         <span class="aw-long-arrow-left"></span>
                     </a>
                     <h2 class="single-head-heder">Події</h2>
@@ -40,11 +40,11 @@ get_header(); ?>
                             <div class="col-xs-6">
                                 <a href="<? the_permalink() ?>" class="director-arc movie-arc event-arch">
                                     <? the_post_thumbnail( array(170, 180)); ?>
-                                    <span class="poster-caption">
-                                    <span class="poster-text">
-                                        <span class="title"><? the_title() ?></span>
-                                    </span>
-                                </span>
+<!--                                    <span class="poster-caption">-->
+<!--                                    <span class="poster-text">-->
+<!--                                        <span class="title">--><?// the_title() ?><!--</span>-->
+<!--                                    </span>-->
+<!--                                </span>-->
                                 </a>
                             </div>
                         <? endwhile; ?>

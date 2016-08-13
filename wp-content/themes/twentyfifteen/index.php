@@ -471,9 +471,15 @@
                                             <a href="<? echo $movieLink ."#title3" ?>" class="inherit">
                                                 <h1><? echo $header ?></h1>
                                             </a>
-                                            <a class="review-image" href="#">
-                                                <img class="animated-gif"  src="<? echo $image ?>" alt="">
+
+                                            <a  class="review-image" style="background-image: url('<? echo $image ?>')" href="<? echo $movieLink ?>">
+
                                             </a>
+                                            <style>
+                                                .review-image:hover{
+                                                    background-image: url("<? echo $gif ?>")!important;
+                                                }
+                                            </style>
                                             <a href="<? echo $reviewLink ."#title3" ?>">
                                                 <p class="rewiev-part">
                                                     <? echo $review ?>
@@ -485,7 +491,7 @@
                                 <?php endwhile; ?>
 
                             </div>
-                            <div class="films-link">
+                            <div class="films-link" style="bottom: -63px;">
                                 <a href="/reviews" class="btn">Всі рецензії</a>
                             </div>
                         </div>
@@ -559,12 +565,6 @@
                                 $link = get_sub_field('link');
                                 ?>
                                 <a href="<? echo $link?>" class="poster">
-                                     <span class="poster-caption">
-                                     <span class="poster-text">
-                                        <span class="title">Белые Слоны (2014)</span>
-                                        <span class="dir">Яна Антонец</span>
-                                    </span>
-                                </span>
                                     <img src="<? echo $image ?>" alt="">
                                 </a>
 
@@ -746,7 +746,8 @@
                                 </div>
                             </div>
                             <div class="films-link">
-                                <a href="/" class="btn">Допомогти проекту</a>
+                                <? $donate_link = get_field('donate_link', 'option') ?>
+                                <a href="<? echo $donate_link ?>" class="btn">Допомогти проекту</a>
                             </div>
                         </div>
                     </div>
@@ -824,11 +825,11 @@
                                         <a href="#" class="event-link" style="background-image: url('<? echo $image ?>')">
 
                                         </a>
-                                        <a href="<? echo $link?>" class="event-text">
-                                        <span class="event-span-text">
-                                            <? echo $text?>
-                                        </span>
-                                        </a>
+<!--                                        <a href="--><?// echo $link?><!--" class="event-text">-->
+<!--                                        <span class="event-span-text">-->
+<!--                                            --><?// echo $text?>
+<!--                                        </span>-->
+<!--                                        </a>-->
                                     </div>
                                   </div>
 

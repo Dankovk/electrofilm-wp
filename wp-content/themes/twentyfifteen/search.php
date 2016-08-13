@@ -51,8 +51,7 @@ get_header(); ?>
 									<div class="col-xs-3">
 										<? the_post_thumbnail(array(170, 200)) ?>
 									</div>
-									<div class="col-xs-1"></div>
-									<div class="col-xs-8">
+									<div class="col-xs-9">
 										<? the_excerpt() ?>
 									</div>
 
@@ -67,7 +66,7 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-xs-9"></div>
 				<div class="col-xs-1">
-					<h2 class="single-head-heder fin">fin</h2>
+					<h2 class="single-head-heder fin" title="ФИН ПАРНИШКА">fin</h2>
 				</div>
 				<div class="col-xs-2"></div>
 			</div>
