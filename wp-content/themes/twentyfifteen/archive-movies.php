@@ -15,7 +15,7 @@ get_header(); ?>
                     <h2 class="single-head-heder">Фільми</h2>
                     <div class="find">
                         <span class="aw-search"></span>
-                        <form role="search" method="get" class="search-form" action="http://localhost:8888/">
+                        <form role="search" method="get" class="search-form" action="http://electrofilm22.esy.es/">
                             <input type="search" class="search-field"  value="" name="s">
                             <input class="hidden" type="submit" class="search-submit screen-reader-text">
                         </form>

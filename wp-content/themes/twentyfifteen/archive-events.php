@@ -15,7 +15,7 @@ get_header(); ?>
                     <h2 class="single-head-heder">Події</h2>
                     <div class="find">
                         <span class="aw-search"></span>
-                        <form role="search" method="get" class="search-form" action="http://localhost:8888/">
+                        <form role="search" method="get" class="search-form" action="http://electrofilm22.esy.es/">
                             <input type="search" class="search-field"  value="" name="s">
                             <input class="hidden" type="submit" class="search-submit screen-reader-text">
                         </form>
@@ -36,9 +36,10 @@ get_header(); ?>
                     <div class="row">
                         <? while ( have_posts() ) : the_post(); ?>
                             <? $id = get_the_ID();
+                               $eventLink = get_field('link');
                             ?>
                             <div class="col-xs-6">
-                                <a href="<? the_permalink() ?>" class="director-arc movie-arc event-arch">
+                                <a href="<? echo $eventLink?>" class="director-arc movie-arc event-arch">
                                     <? the_post_thumbnail( array(170, 180)); ?>
 <!--                                    <span class="poster-caption">-->
 <!--                                    <span class="poster-text">-->

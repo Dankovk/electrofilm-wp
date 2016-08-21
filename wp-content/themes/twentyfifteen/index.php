@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>ELECTRO.FILM</title>
-    <meta name="description" content="ELECTRO.FILM>
+    <meta name="description" content="ELECTRO.FILM">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon block -->
@@ -358,15 +358,26 @@
                                         $first = get_post($firstID);
                                         $second = get_post($secondID);
                                         $third = get_post($thirdID);
+                                        $firstGif = get_field('index_gif', $firstID);
+                                        $secondGif = get_field('index_gif', $secondID);
+                                        $thirdGif = get_field('index_gif', $thirdID);
                                         $dir_array = array($first, $second, $third);
                                     ?>
 
-                                        <? foreach ($dir_array as $dir){ ?>
-                                                <a class="director" href="<? echo get_the_permalink($dir -> ID) ?>">
-                                                    <? echo get_the_post_thumbnail($dir -> ID,array(170, 180) ) ?>
-                                                    <span class="director-name"><? echo get_the_title($dir -> ID) ?></span>
+
+                                                <a class="director" href="<? echo get_the_permalink($first -> ID) ?>">
+                                                    <? echo get_the_post_thumbnail($first -> ID,array(170, 180) ) ?>
+                                                    <img class="index-dir-gif" src="<? echo $firstGif?>" alt="" style="display: none">
                                                 </a>
-                                        <? } ?>
+                                                <a class="director" href="<? echo get_the_permalink($second -> ID) ?>">
+                                                    <? echo get_the_post_thumbnail($second -> ID,array(170, 180) ) ?>
+                                                    <img class="index-dir-gif" src="<? echo $secondGif?>" alt="" style="display: none">
+                                                </a>
+                                                <a class="director" href="<? echo get_the_permalink($third -> ID) ?>">
+                                                    <? echo get_the_post_thumbnail($third -> ID,array(170, 180) ) ?>
+                                                    <img class="index-dir-gif" src="<? echo $thirdGif?>" alt="" style="display: none">
+                                                </a>
+
 
                                     <? endwhile; ?>
 
@@ -379,10 +390,12 @@
                                     ));
 
                                     while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                                        <? $id = get_the_ID();
+                                            $gif = get_field('index_gif', $id) ?>
 
                                         <a class="director" href="<? the_permalink() ?>">
                                             <? the_post_thumbnail(array(170, 180)) ?>
-                                            <span class="director-name"><? the_title() ?></span>
+                                            <img class="index-dir-gif" src="<? echo $gif?>" alt="" style="display: none">
                                         </a>
 
                                     <? endwhile; ?>
@@ -632,7 +645,7 @@
                         <div class="col-xs-8">
                             <div class="find">
                                 <span class="aw-search"></span>
-                                <form role="search" method="get" class="search-form" action="http://localhost:8888/">
+                                <form role="search" method="get" class="search-form" action="http://electrofilm22.esy.es/">
                                     <input type="search" class="search-field"  value="" name="s">
                                     <input class="hidden" type="submit" class="search-submit screen-reader-text">
                                 </form>

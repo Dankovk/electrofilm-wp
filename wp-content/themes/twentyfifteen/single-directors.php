@@ -10,10 +10,10 @@ get_header(); ?>
                         <a href="/directors" class="back-arrow">
                             <span class="aw-long-arrow-left"></span>
                         </a>
-                        <h2 class="single-head-heder">Яна Антонец</h2>
+                        <h2 class="single-head-heder"><? the_title() ?></h2>
                         <div class="find">
                             <span class="aw-search"></span>
-                            <form role="search" method="get" class="search-form" action="http://localhost:8888/">
+                            <form role="search" method="get" class="search-form" action="http://electrofilm22.esy.es/">
                                 <input type="search" class="search-field"  value="" name="s">
                                 <input class="hidden" type="submit" class="search-submit screen-reader-text">
                             </form>
